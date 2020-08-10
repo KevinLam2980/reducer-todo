@@ -20,18 +20,21 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className='App'>
+      <h1>Welcome to Todos</h1>
+      <div className="Todo">
 
-    <TodoInput  
-      onHandleChanges={onHandleChanges} 
-      formData={formData} 
-      setFormData ={setFormData} 
-      dispatch={dispatch}/>
+      <TodoInput  
+        onHandleChanges={onHandleChanges} 
+        formData={formData} 
+        setFormData ={setFormData} 
+        dispatch={dispatch}/>
 
-    <TodoList 
-      completedTodo={completedTodo} 
-      todos={state.todo}/> 
+      <TodoList 
+        completedTodo={completedTodo} 
+        todos={state.todo}/> 
 
+      </div>
     </div>
   );
 }
