@@ -1,9 +1,12 @@
+import moment from 'moment'
+
 export const initialState = {
     todo: [
         {
             item: 'Learn about reducers',
             completed: false,
-            id: 3892987589
+            id: 3892987589,
+            timestamp: moment().format('MMMM Do YYYY, h:mm:ss a'),
         },
     ]
 

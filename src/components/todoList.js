@@ -39,7 +39,7 @@ const TodoList = props => {
         <StyledList>
             <ul>
                 {todos.map(todo => {
-                    return <li key={todo.id} onClick={() => completedTodo(todo.id)} className={todo.completed ? 'complete' : ''}><p>{todo.item}</p><p class='momentTime'>{moment().format('MMMM Do YYYY, h:mm:ss a')}</p></li>
+                    return <li key={todo.id} onClick={() => completedTodo(todo.id)} className={todo.completed ? 'complete' : ''}><p>{todo.item}</p><p class='momentTime'>{todo.timestamp}</p></li>
                 })}
             </ul>
         </StyledList>

@@ -1,5 +1,6 @@
 import React from 'react'
 import Styled from 'styled-components'
+import moment from 'moment'
 
 const StyledInput = Styled.div`
 width: 100%;
@@ -59,7 +60,7 @@ const { onHandleChanges, formData, setFormData , dispatch} = props
                 ></input>
                 <button id="submitBtn" onClick={(evt) => {
                     evt.preventDefault()
-                    dispatch({type: 'SUBMIT_TODO', payload: {item: formData, completed: false, id: new Date()} })
+                    dispatch({type: 'SUBMIT_TODO', payload: {item: formData, completed: false, id: new Date(), timestamp: moment().format('MMMM Do YYYY, h:mm:ss a') } })
                     setFormData('') 
                     }}>Submit</button>
             </form>
