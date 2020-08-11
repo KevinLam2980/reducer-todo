@@ -23,6 +23,9 @@ button {
         transition: 0.5s;
         box-shadow: 0px 0px 5px black;
     }
+    &:focus{
+        outline: none;
+    }
     width: 100%;
     height: 2.75rem;
 }
@@ -60,8 +63,10 @@ const { onHandleChanges, formData, setFormData , dispatch} = props
                 ></input>
                 <button id="submitBtn" onClick={(evt) => {
                     evt.preventDefault()
-                    dispatch({type: 'SUBMIT_TODO', payload: {item: formData, completed: false, id: new Date(), timestamp: moment().format('MMMM Do YYYY, h:mm:ss a') } })
-                    setFormData('') 
+                    if(formData !== '' ){
+                        dispatch({type: 'SUBMIT_TODO', payload: {item: formData, completed: false, id: new Date(), timestamp: moment().format('MMMM Do YYYY, h:mm:ss a') } })
+                        setFormData('') 
+                    }
                     }}>Submit</button>
             </form>
             <button

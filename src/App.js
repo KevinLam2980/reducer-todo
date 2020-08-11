@@ -6,12 +6,12 @@ import './App.css';
 import {todoReducer, initialState} from './reducers/reducer'
 
 function App() {
-  const [formData, setFormData] = useState()
+  const [formData, setFormData] = useState('')
   const [state, dispatch] = useReducer(todoReducer, initialState)
 
 
   const onHandleChanges = evt => {
-    setFormData(evt.target.value)
+    setFormData(evt.target.value.trim())
   }
 
   const completedTodo = todo => {
