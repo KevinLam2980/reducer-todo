@@ -9,7 +9,6 @@ export const initialState = {
             timestamp: moment().format('MMMM Do YYYY, h:mm:ss a'),
         },
     ]
-
 }
 
 export const todoReducer = (state, action) => {
@@ -21,15 +20,15 @@ export const todoReducer = (state, action) => {
                 todo: [...state.todo, action.payload]
         }
         case 'TODO_TOGGLE' :
-                return {
-                    ...state,
-                todo: state.todo.map(todo => {
-                    if(action.payload === todo.id){
-                        return {
-                            ...todo, completed: !todo.completed
-                        }
+            return {
+                 ...state,
+            todo: state.todo.map(todo => {
+                if(action.payload === todo.id){
+                    return {
+                        ...todo, completed: !todo.completed
                     }
-                    return {...todo}
+                }
+                return {...todo}
             })}
         case 'CLEAR_COMPLETE' :
             return {

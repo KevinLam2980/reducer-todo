@@ -11,13 +11,12 @@ function App() {
 
 
   const onHandleChanges = evt => {
-    setFormData(evt.target.value.trim())
+    setFormData(evt.target.value)
   }
 
   const completedTodo = todo => {
     dispatch({type: 'TODO_TOGGLE', payload: todo})
   }
-
 
   return (
     <div className='App'>
